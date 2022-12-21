@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Martian+Mono&display=swap');
+body {
+    background-color: #111;
+}
+
+#landing {
+    display: flex;
+    justify-content: space-between;
+}
+#photo {
+    display: absolute;
+    right:80px;
+    animation-name: startup;
+    transform: translateX(-100px);
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-direction: linear;
+}
+
+@keyframes startup {
+    0% {
+        transform: translateX(100px);
+        transform: translateY(-20px);
+
+    }
+    80% {
+        transform: translateX(-100px);
+       
+    }
+}
+
+
+#nav{
+    
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 72px;
+    background: linear-gradient(271deg,#a0e9ff 30%,#a162e8 50%,#f093b0 70%,#edca85 94%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'Martian Mono', monospace;
+    animation: gradientmove 8s infinite linear;
+}
+@keyframes gradientmove {
+    to {
+        background-position: -200% center;
+      }
+}
+a
+{
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#greet {
+    padding: 5%;
+}
+.wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+    font-size: 8rem;
+  }
+  
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+  #footer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  @media (max-width: 480px) {
+    body {
+        height: 200%;
+    }
+    #landing {
+        display: grid;
+        
+    }
+    #photo {
+        grid-row: 1;
+        display: absolute;
+        left: 50%;
+        transform: translateX(40px);
+        right: 0px;
+        animation-name: startupformob;
+        animation-duration: 2s;
+    }
+    #greet
+    {
+        background-color: #a162e8;
+        border-radius: 10px;
+        float: left;
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        z-index: 1000;
+        width: 100%;
+        height: 40%;
+
+    }
+    #footer {
+
+        display: flex;
+        justify-content: space-between;
+    }
+    h1 {
+        font-size: 2.6rem;
+    }
+    span {
+        font-size: 2rem;
+    }
+
+  }
